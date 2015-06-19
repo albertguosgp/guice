@@ -1,4 +1,5 @@
 Guice
+new feature 1
 ====
 
 **Latest release: [4.0](https://github.com/google/guice/wiki/Guice40)**

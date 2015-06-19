@@ -2,6 +2,7 @@ Guice
 new feature 1
 hot fix
 hot fix doing something again
+hot fix doing something again
 ====
 
 **Latest release: [4.0](https://github.com/google/guice/wiki/Guice40)**

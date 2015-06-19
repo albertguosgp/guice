@@ -1,5 +1,6 @@
 Guice
 new feature 1
+hot fix
 ====
 
 **Latest release: [4.0](https://github.com/google/guice/wiki/Guice40)**

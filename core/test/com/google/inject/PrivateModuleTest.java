@@ -111,6 +111,32 @@ public class PrivateModuleTest extends TestCase {
     }
   }
 
+	public void testChildInjector() {
+		Injector injector = Guice.createInjector(new ChildModule(), new GrandChildModule());
+		Injector childInjector = injector.createChildInjector(new GrandChildModule());
+		injector.getInstance(E.class);
+		childInjector.getInstance(E.class);
+	}
+
+	class ChildModule extends AbstractModule {
+		@Override
+		protected void configure() {
+			bind(D.class);
+		}
+	}
+
+	class GrandChildModule extends AbstractModule {
+		@Override
+		protected void configure() {
+			bind(E.class);
+		}
+	}
+
+	static class D {
+	}
+
+	static class E {}
+
   public void testMisplacedExposeStatement() {
     try {
       Guice.createInjector(new AbstractModule() {
@@ -125,6 +151,7 @@ public class PrivateModuleTest extends TestCase {
           " at " + PrivateModuleTest.class.getName(), getDeclaringSourcePart(getClass()));
     }
   }
+
 
   public void testPrivateModulesAndProvidesMethods() {
     Injector injector = Guice.createInjector(new AbstractModule() {

@@ -185,6 +185,8 @@ public class DuplicateBindingsTest extends TestCase {
           "at " + ThrowingModule.class.getName());
     }
   }
+
+
   
   public void testChildInjectorDuplicateParentFail() {
     Injector injector = Guice.createInjector(
